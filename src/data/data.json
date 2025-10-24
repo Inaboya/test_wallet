@@ -3,7 +3,7 @@
     "id": "t1",
     "name": "Starbucks",
     "description": "Coffee",
-    "date": "2025-10-14T08:00:00.000Z",
+    "date": "2025-10-24T08:00:00.000Z",
     "amount": 5.5,
     "type": "charge",
     "authorized": true,
