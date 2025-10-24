@@ -1,0 +1,66 @@
+[
+  {
+    "id": "t1",
+    "name": "Starbucks",
+    "description": "Coffee",
+    "date": "2025-10-14T08:00:00.000Z",
+    "amount": 5.5,
+    "type": "charge",
+    "authorized": true,
+    "authorizedUser": "Kelvin",
+    "icon": "mug-hot"
+  },
+  {
+    "id": "t6",
+    "name": "Salary",
+    "description": "Monthly salary",
+    "date": "2025-10-01T09:00:00.000Z",
+    "amount": 2000,
+    "type": "payment",
+    "authorized": true,
+    "authorizedUser": "Alice",
+    "icon": "wallet"
+  },
+  {
+    "id": "t7",
+    "name": "Amazon",
+    "description": "Books",
+    "date": "2025-09-28T16:20:00.000Z",
+    "amount": 45.99,
+    "type": "charge",
+    "authorized": false,
+    "icon": "box"
+  },
+  {
+    "id": "t8",
+    "name": "Gym",
+    "description": "Membership",
+    "date": "2025-09-23T06:30:00.000Z",
+    "amount": 39.99,
+    "type": "charge",
+    "authorized": false,
+    "icon": "dumbbell"
+  },
+  {
+    "id": "t9",
+    "name": "Netflix",
+    "description": "Subscription",
+    "date": "2025-09-10T20:00:00.000Z",
+    "amount": 12.99,
+    "type": "charge",
+    "authorized": true,
+    "authorizedUser": "Charles",
+    "icon": "film"
+  },
+  {
+    "id": "t10",
+    "name": "Uber",
+    "description": "Ride",
+    "date": "2025-09-05T22:15:00.000Z",
+    "amount": 8.75,
+    "type": "charge",
+    "authorized": true,
+    "authorizedUser": "David",
+    "icon": "car-side"
+  }
+]
