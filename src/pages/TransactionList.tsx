@@ -106,7 +106,7 @@ function TransactionList() {
                   {formattedDate(new Date(tx.date))}
                 </p>
               </div>
-              <div className="w-1/6">
+              <div className="w-1/6 justify-end flex">
                 <Link
                   to={`/transaction/${tx.id}`}
                   className="text-sm list-none"
