@@ -27,8 +27,8 @@ function TransactionList() {
   const available = Math.round((MAX_LIMIT - cardBalance) * 100) / 100;
   return (
     <div className="w-full h-screen bg-gray-300 p-5">
-      <div className="w-full flex items-stretch gap-4">
-        <div className="w-1/2 h-full">
+      <div className="w-full flex gap-4">
+        <div className="w-1/2 flex flex-col gap-4">
           <div className="w-full bg-white rounded-md p-2 flex flex-col gap-0.5">
             <h3 className="text-sm text-[#000000ED] font-medium">
               Card Balance
@@ -44,7 +44,7 @@ function TransactionList() {
             </div>
           </div>
 
-          <div className="w-full bg-white rounded-md p-4 my-3">
+          <div className="w-full bg-white rounded-md p-5">
             <h3 className="text-sm text-[#000000ED] font-medium">
               Daily Points
             </h3>
@@ -78,7 +78,7 @@ function TransactionList() {
           Latest Transactions
         </h3>
 
-        <div className="w-full p-3 bg-white rounded-md mt-2 flex flex-col gap-3 hide-scrollbar overflow-y-auto max-h-[70vh]">
+        <div className="w-full p-3 bg-white rounded-md mt-2 flex flex-col gap-3 hide-scrollbar overflow-y-auto max-h-[60vh]">
           {/* <TransactionListCard transactions={transactions} /> */}
           {transactions.map((tx, index) => (
             <div
