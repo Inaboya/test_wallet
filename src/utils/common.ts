@@ -42,6 +42,25 @@ const pts = computePointsForDay(day)
 return humanFormatPoints(pts)
 }
 
+export function formattedDate(date: Date): string {
+  const now = new Date();
+  const oneWeekAgo = new Date();
+  oneWeekAgo.setDate(now.getDate() - 7);
+
+  // If date is within the last 7 days, return weekday name
+  if (date >= oneWeekAgo) {
+    return date.toLocaleDateString("en-US", { weekday: "long" });
+  }
+
+  // Otherwise, return in dd/mm/yyyy format
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const year = date.getFullYear();
+
+  return `${day}/${month}/${year}`;
+}
+
+
 export function formatDate(date: Date): string {
   const day = String(date.getDate()).padStart(2, "0");
   const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are 0-based

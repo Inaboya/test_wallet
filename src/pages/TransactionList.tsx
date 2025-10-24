@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { getTransactions } from "../data";
-import { todaysPoints } from "../utils/common";
+import { formattedDate, todaysPoints } from "../utils/common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faCheck } from "@fortawesome/free-solid-svg-icons";
 import type { Transaction } from "../data/types";
@@ -78,7 +78,7 @@ function TransactionList() {
           Latest Transactions
         </h3>
 
-        <div className="w-full p-3 bg-white rounded-md mt-2 flex flex-col gap-3">
+        <div className="w-full p-3 bg-white rounded-md mt-2 flex flex-col gap-3 hide-scrollbar overflow-y-auto max-h-[70vh]">
           {/* <TransactionListCard transactions={transactions} /> */}
           {transactions.map((tx, index) => (
             <div
@@ -103,7 +103,7 @@ function TransactionList() {
                 </p>
                 <p className="text-sm text-[#666]">
                   {tx.authorized ? tx.authorizedUser + " • " : ""}
-                  {new Date(tx.date).toDateString()}
+                  {formattedDate(new Date(tx.date))}
                 </p>
               </div>
               <div className="w-1/6">
