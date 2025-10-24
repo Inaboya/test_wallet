@@ -42,7 +42,7 @@ function TransactionDetail() {
             <p className="text-lg text-[#000000ED] font-semibold">
               Status: {transaction?.pending ? "Pending" : "Approved"}
             </p>
-            <p className="text-md text-[#8E8E93]">RBC Bank Debit Card</p>
+            <p className="text-md text-[#8E8E93]">{transaction?.description}</p>
           </div>
 
           <div className="w-full flex justify-between items-center mt-4">

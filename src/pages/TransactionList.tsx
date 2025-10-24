@@ -52,24 +52,23 @@ function TransactionList() {
           </div>
         </div>
         <div className="w-1/2">
-  <div className="w-full h-full bg-white rounded-md p-5 flex flex-col justify-between">
-    <div>
-      <h3 className="text-sm text-[#000000ED] font-semibold">
-        No Payment Due
-      </h3>
-      <p className="text-xs text-[#8E8E93] font-medium">
-        You've paid your September balance
-      </p>
-    </div>
+          <div className="w-full h-full bg-white rounded-md p-5 flex flex-col justify-between">
+            <div>
+              <h3 className="text-sm text-[#000000ED] font-semibold">
+                No Payment Due
+              </h3>
+              <p className="text-xs text-[#8E8E93] font-medium">
+                You've paid your September balance
+              </p>
+            </div>
 
-    <div className="flex justify-end">
-      <div className="w-10 h-10 bg-[#E5E5EA] flex justify-center items-center rounded-full p-3">
-        <FontAwesomeIcon icon={faCheck} size="1x" />
-      </div>
-    </div>
-  </div>
-</div>
-
+            <div className="flex justify-end">
+              <div className="w-10 h-10 bg-[#E5E5EA] flex justify-center items-center rounded-full p-3">
+                <FontAwesomeIcon icon={faCheck} size="1x" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* transaction list */}
@@ -98,16 +97,20 @@ function TransactionList() {
                   </p>
                 </div>
                 <div className="flex w-full justify-between">
-  <p className="text-sm text-[#8E8E93]">
-                  {tx.pending ? "Pending • " : ""}
-                  {tx.description || ""}
-                </p>
+                  <p className="text-sm text-[#8E8E93] whitespace-nowrap overflow-hidden text-ellipsis">
+                    {tx.pending ? "Pending - " : ""}
+                    {(tx.description?.length ?? 0) > 15
+                      ? `${tx?.description?.slice(0, 15)}...`
+                      : tx.description || ""}
+                  </p>
 
-                <p className="bg-[#E5E5EA] p-1 rounded-md text-[#8E8E93] text-xxs">3%</p>
+                  <p className="bg-[#E5E5EA] p-1 rounded-md text-[#8E8E93] text-xxs">
+                    3%
+                  </p>
                 </div>
-              
+
                 <p className="text-sm text-[#8E8E93]">
-                  {tx.authorized ? tx.authorizedUser + " • " : ""}
+                  {tx.authorized ? tx.authorizedUser + " - " : ""}
                   {formattedDate(new Date(tx.date))}
                 </p>
               </div>
