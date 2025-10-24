@@ -2,6 +2,7 @@
 @import url('https://fonts.cdnfonts.com/css/br-firma');
 /* @import url('https://fonts.cdnfonts.com/css/segoe-ui-4');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
@@ -13,9 +14,11 @@
 
 @layer base {
   body {
-    @apply bg-[#FFFFFF] font-firma;
+    @apply bg-[#E5E5EA];
+    font-family: 'Inter', sans-serif;
   }
 }
+
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;

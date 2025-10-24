@@ -26,10 +26,10 @@ function TransactionList() {
 
   const available = Math.round((MAX_LIMIT - cardBalance) * 100) / 100;
   return (
-    <div className="w-full h-screen bg-gray-300 p-5">
-      <div className="w-full flex gap-4">
-        <div className="w-1/2 flex flex-col gap-4">
-          <div className="w-full bg-white rounded-md p-2 flex flex-col gap-0.5">
+    <div className="w-full h-screen bg-[#E5E5EA] p-5">
+      <div className="w-full flex gap-2">
+        <div className="w-1/2 flex flex-col gap-2">
+          <div className="w-full bg-white rounded-md p-5 flex flex-col gap-0.5">
             <h3 className="text-sm text-[#000000ED] font-medium">
               Card Balance
             </h3>
@@ -37,33 +37,33 @@ function TransactionList() {
               ${cardBalance.toFixed(2)}
             </p>
             <div className="flex items-center gap-2">
-              <p className="text-xs text-[#666666]">
+              <p className="text-xs text-[#8E8E93] font-medium">
                 ${available.toLocaleString()}
               </p>
-              <p className="text-xs text-[#666666] font-medium">Available</p>
+              <p className="text-xs text-[#8E8E93] font-medium">Available</p>
             </div>
           </div>
 
           <div className="w-full bg-white rounded-md p-5">
-            <h3 className="text-sm text-[#000000ED] font-medium">
+            <h3 className="text-sm text-[#000000ED] font-semibold">
               Daily Points
             </h3>
-            <p className="text-xs text-[#666666]">{todaysPoints()}</p>
+            <p className="text-xs text-[#8E8E93]">{todaysPoints()}</p>
           </div>
         </div>
         <div className="w-1/2">
-  <div className="w-full h-full bg-white rounded-md p-2 flex flex-col justify-between">
+  <div className="w-full h-full bg-white rounded-md p-5 flex flex-col justify-between">
     <div>
       <h3 className="text-sm text-[#000000ED] font-semibold">
         No Payment Due
       </h3>
-      <p className="text-xs text-[#333]">
+      <p className="text-xs text-[#8E8E93] font-medium">
         You've paid your September balance
       </p>
     </div>
 
     <div className="flex justify-end">
-      <div className="w-10 h-10 bg-[#d6d6d6] flex justify-center items-center rounded-full p-3">
+      <div className="w-10 h-10 bg-[#E5E5EA] flex justify-center items-center rounded-full p-3">
         <FontAwesomeIcon icon={faCheck} size="1x" />
       </div>
     </div>
@@ -74,7 +74,7 @@ function TransactionList() {
 
       {/* transaction list */}
       <div className="w-full mt-4">
-        <h3 className="text-2xl text-[#000000ED] font-semibold">
+        <h3 className="text-3xl text-[#000000ED] font-bold">
           Latest Transactions
         </h3>
 
@@ -82,34 +82,39 @@ function TransactionList() {
           {/* <TransactionListCard transactions={transactions} /> */}
           {transactions.map((tx, index) => (
             <div
-              className="w-full flex items-start border-b-2 border-[#d6d6d6] p-2"
+              className="w-full flex gap-2 items-start border-b-2 border-[#d6d6d6] p-2"
               key={index}
             >
               <div className="w-1/6 h-15">
                 <div className="bg-[#000] rounded-md w-full h-full" />
               </div>
-              <div className="w-4/6 flex flex-col gap-0.5 px-2">
+              <div className="w-5/6 flex flex-col gap-0.5 px-2">
                 <div className="flex w-full justify-between items-center">
-                  <h4 className="text-md text-[#000000ED] font-medium">
+                  <h4 className="text-md text-[#000000ED] font-semibold">
                     {tx.name}
                   </h4>
-                  <p className="text-sm text-[#333]">
+                  <p className="text-sm text-[#000000ED] font-semibold">
                     {tx.type === "payment" ? "+" : "-"}${tx.amount.toFixed(2)}
                   </p>
                 </div>
-                <p className="text-sm text-[#666]">
+                <div className="flex w-full justify-between">
+  <p className="text-sm text-[#8E8E93]">
                   {tx.pending ? "Pending • " : ""}
                   {tx.description || ""}
                 </p>
-                <p className="text-sm text-[#666]">
+
+                <p className="bg-[#E5E5EA] p-1 rounded-md text-[#8E8E93] text-xxs">3%</p>
+                </div>
+              
+                <p className="text-sm text-[#8E8E93]">
                   {tx.authorized ? tx.authorizedUser + " • " : ""}
                   {formattedDate(new Date(tx.date))}
                 </p>
               </div>
-              <div className="w-1/6 justify-end flex">
+              <div className="justify-end flex">
                 <Link
                   to={`/transaction/${tx.id}`}
-                  className="text-sm list-none"
+                  className="text-sm list-none text-[#8E8E93]"
                 >
                   <FontAwesomeIcon icon={faAngleRight} size="1x" />
                 </Link>

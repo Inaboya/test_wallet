@@ -1,13 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  safelist: ['font-firma'],
+  safelist: ['font-firma', 'font-segoe', 'font-poppins', 'font-inter', 'font-apple'],
   theme: {
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
         segoe: ['Segoe', 'sans-serif'],
-        firma: ['BR Firma', 'sans-serif'], // ✅ fixed typo
+        firma: ['BR Firma', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        apple: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       },
       fontSize: {
         xxs: ['0.65rem', { lineHeight: '1.325' }],
