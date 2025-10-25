@@ -87,13 +87,13 @@ function TransactionList() {
               <div className="w-1/6 h-15">
                 <div className="bg-[#000] rounded-md w-full h-full" />
               </div>
-              <div className="w-5/6 flex flex-col gap-0.5 px-2">
+              <div className="w-5/6 flex flex-col gap-0.2 px-2">
                 <div className="flex w-full justify-between items-center">
                   <h4 className="text-md text-[#000000ED] font-semibold">
                     {tx.name}
                   </h4>
                   <p className="text-sm text-[#000000ED] font-semibold">
-                    {tx.type === "payment" ? "+" : "-"}${tx.amount.toFixed(2)}
+                    {tx.type === "payment" ? "+" : ""}${tx.amount.toFixed(2)}
                   </p>
                 </div>
                 <div className="flex w-full justify-between">
